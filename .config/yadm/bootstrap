@@ -1,0 +1,9 @@
+#!/bin/sh
+
+cd "$HOME"
+
+echo "Initializing submodules"
+yadm submodule update --recursive --init
+
+echo "Linking NvChad config"
+ln -s .config/nvchad .config/nvim/lua/custom
