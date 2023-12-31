@@ -45,7 +45,7 @@ else
 end
 
 # Environment variables
-set -U fish_user_paths $HOME/.local/bin $fish_user_paths
+set -U fish_user_paths $HOME/.cargo/bin $HOME/.local/bin $fish_user_paths
 set -x EDITOR nvim
 set -x XDG_CONFIG_HOME $HOME/.config
 set -x XDG_CACHE_HOME $HOME/.cache

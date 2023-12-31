@@ -13,7 +13,8 @@ M.general = {
   n = {
     ["!"] = { ":!", "Enter shell command mode", opts = { nowait = true } },
     ["<C-q>"] = { "<cmd>qa<cr>", "Close Neovim" },
-    ["<C-c>"] = { "<cmd>q<cr>", "Close current window" },
+    ["<M-q>"] = { "<cmd>q!<cr>", "Close current buffer without saving" },
+    ["<C-c>"] = { "<C-w>q", "Close current window" },
     ["<leader>n"] = nil,
     ["<leader>rn"] = nil,
     ["<M-.>"] = { "<cmd>bn<cr>", "Goto next buffer" },
