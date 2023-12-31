@@ -76,6 +76,7 @@ M.telescope = {
     },
     ["<leader>fk"] = { "<cmd> Telescope keymaps <CR>", "Find assigned keybindings" },
     ["<leader>ft"] = { "<cmd> Telescope builtin <CR>", "Find Telescope builtin commands"},
+    ["<leader>fc"] = { "<cmd> Telescope highlights <CR>", "List highlight groups"},
     -- git
     ["<leader>gc"] = { "<cmd> Telescope git_commits <CR>", "Git commits" },
     ["<leader>gb"] = { "<cmd> Telescope git_branches <CR>", "Git branches" },

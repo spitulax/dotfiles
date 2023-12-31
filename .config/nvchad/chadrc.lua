@@ -8,8 +8,6 @@ M.ui = {
   transparency = true,
   lsp_semantic_tokens = false,
 
-  hl_override = require("custom.highlight.statusline"),
-
   cmp = {
     selected_item_bg = "simple",
   },

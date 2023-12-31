@@ -7,19 +7,18 @@ local M = {
 
   {
     "nvim-neorg/neorg",
+    lazy = false,
     build = ":Neorg sync-parsers",
     dependencies = { "nvim-lua/plenary.nvim" },
-    config = function()
-      require("neorg").setup(function()
-        return require("custom.configs.neorg")
-      end)
+    opts = function()
+      return require("custom.configs.neorg")
     end,
   },
 
   {
     "nvim-treesitter/nvim-treesitter",
     opts = function()
-      return require("custom.configs.treesitter")
+      return vim.tbl_deep_extend("force", require("plugins.configs.treesitter"), require("custom.configs.treesitter"))
     end,
   },
 
@@ -27,7 +26,13 @@ local M = {
     "mg979/vim-visual-multi",
     branch = "master",
     lazy = false,
-    init = require("custom.configs.vim-visual-multi"),
+  },
+
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = function()
+      return vim.tbl_deep_extend("force", require("plugins.configs.nvimtree"), require("custom.configs.nvim-tree"))
+    end,
   },
 }
 

@@ -50,8 +50,8 @@ set -x EDITOR nvim
 set -x XDG_CONFIG_HOME $HOME/.config
 set -x XDG_CACHE_HOME $HOME/.cache
 set -x XDG_DATA_HOME $HOME/.local/share
-set -x DOTFILES $HOME/repos/dotfiles
 set -x REPOS $HOME/repos
+set -x NOTES $HOME/notes
 set -x THIRDPARTY $HOME/thirdparty
 set -x TEMPDIR $HOME/.temp
 # WSL
