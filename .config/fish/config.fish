@@ -54,6 +54,7 @@ set -x REPOS $HOME/repos
 set -x NOTES $HOME/notes
 set -x THIRDPARTY $HOME/thirdparty
 set -x TEMPDIR $HOME/.temp
+set -x GPG_TTY $(tty)
 # WSL
 set -x C /mnt/c
 set -x WINHOME /mnt/c/Users/Bintang
