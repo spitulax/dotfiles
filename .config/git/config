@@ -1,0 +1,12 @@
+[user]
+	name = "Bintang"
+	email = "bintangadiputrapratama@gmail.com"
+[core]
+	editor = "nvim"
+[init]
+	defaultBranch = "main"
+[credential]
+  credentialStore = "gpg"
+	helper = /home/bintang/thirdparty/gcm-linux_amd64.2.4.1/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true
