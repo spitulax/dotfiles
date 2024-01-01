@@ -7,7 +7,7 @@ local M = {
 
   {
     "nvim-neorg/neorg",
-    lazy = false,
+    ft = "norg",
     build = ":Neorg sync-parsers",
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = function()
@@ -33,6 +33,35 @@ local M = {
     opts = function()
       return vim.tbl_deep_extend("force", require("plugins.configs.nvimtree"), require("custom.configs.nvim-tree"))
     end,
+  },
+
+  {
+    "lewis6991/gitsigns.nvim",
+    opts = function()
+      return vim.tbl_deep_extend("force", require("plugins.configs.others").gitsigns, require("custom.configs.others").gitsigns)
+    end,
+  },
+
+  {
+    "williamboman/mason.nvim",
+    opts = function()
+      return require("custom.configs.mason")
+    end
+  },
+
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      require("plugins.configs.lspconfig")
+      require("custom.configs.lspconfig")
+    end,
+  },
+
+  {
+    "hrsh7th/nvim-cmp",
+    opts = function()
+      return vim.tbl_deep_extend("force", require("plugins.configs.cmp"), require("custom.configs.cmp"))
+    end
   },
 }
 

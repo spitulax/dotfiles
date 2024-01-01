@@ -8,7 +8,9 @@ local opts = {
   },
   git = {
     enable = true,
-    ignore = false,
+    ignore = true,
+    show_on_dirs = true,
+    show_on_open_dirs = false,
   },
   renderer = {
     group_empty = true,
@@ -22,6 +24,19 @@ local opts = {
       show = {
         git = true,
       },
+      git_placement = "signcolumn",
+      glyphs = {
+        bookmark = "",
+        git = {
+          unstaged = "",
+          staged = "",
+          unmerged = "",
+          renamed = "",
+          untracked = "",
+          deleted = "",
+          ignored = "",
+        },
+      }
     },
   },
 }
