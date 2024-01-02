@@ -28,6 +28,7 @@ local M = {
   {
     "mg979/vim-visual-multi",
     branch = "master",
+    enabled = false,
     config = function()
       require("custom.configs.vim-visual-multi")
     end,

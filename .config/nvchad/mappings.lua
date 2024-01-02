@@ -9,6 +9,14 @@ local function cmd_prompt(prompt, completion, cmd)
   end)
 end
 
+M.disabled = {
+  n = {
+    ["<leader>n"] = "",
+    ["<leader>rn"] = "",
+    ["<C-n>"] = "",
+  },
+}
+
 M.general = {
   i = {
     -- navigate within insert mode
@@ -29,6 +37,11 @@ M.general = {
     ["<C-q>"] = { "<cmd>qa<cr>", "Close Neovim" },
     ["<C-c>"] = { "<C-w>q", "Close current window" },
     ["<M-c>"] = { "<C-w>o", "Close all other windows" },
+    ["<M-=>"] = { "<C-w>+", "Increase window height" },
+    ["<M-->"] = { "<C-w>-", "Decrease window height" },
+    ["<M-]>"] = { "<C-w>>", "Increase window width" },
+    ["<M-[>"] = { "<C-w><", "Decrease window width" },
+    ["<M-e>"] = { "<C-w>=", "Uniform window size" },
     ["<M-t>"] = { "<cmd>tabnew<cr>", "Create new tab" },
     ["<M-q>"] = { "<cmd>tabclose<cr>", "Close current tab" },
     ["<M-a>"] = { "<cmd>tabonly<cr>", "Close all other tabs" },
@@ -37,8 +50,6 @@ M.general = {
         require("nvchad.tabufline").close_buffer()
       end,
       "Close current buffer" },
-    ["<leader>n"] = nil,
-    ["<leader>rn"] = nil,
     ["<M-.>"] = { "<cmd>bn<cr>", "Goto next buffer" },
     ["<M-,>"] = { "<cmd>bp<cr>", "Goto prev buffer" },
     ["<M-b>"] = {
@@ -47,6 +58,9 @@ M.general = {
       end,
       "Jump to buffer by name",
     },
+  },
+  v = {
+    ["<C-n>"] = { ":norm ", "Execute normal mode commands" },
   },
 }
 
