@@ -1,7 +1,10 @@
 local cmp = require("cmp")
 
 local opts = {
-  keyword_length = 3,
+  preselect = cmp.PreselectMode.None,
+  completion = {
+    keyword_length = 3,
+  },
   view = {
     docs = {
       auto_open = false,
@@ -10,14 +13,21 @@ local opts = {
   mapping = {
     ["<M-x>"] = cmp.mapping.close(),
     ["<M-z>"] = cmp.mapping.abort(),
-    ["<M-d>"] = cmp.mapping.open_docs(),
-    ["<M-c>"] = cmp.mapping.close_docs(),
+    ["<M-d>"] = function()
+      if cmp.visible_docs() then cmp.close_docs()
+      else cmp.open_docs() end
+    end,
+    ["<CR>"] = vim.NIL,
+    ["<Tab>"] = cmp.mapping.confirm({
+      behavior = cmp.ConfirmBehavior.Insert,
+      select = true,
+    }),
   },
   sources = {
-    -- { name = "nvim_lsp" },
+    { name = "nvim_lsp" },
     { name = "luasnip" },
     { name = "buffer" },
-    -- { name = "nvim_lua" },
+    { name = "nvim_lua" },
     { name = "path" },
   },
 }

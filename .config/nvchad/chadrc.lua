@@ -1,12 +1,17 @@
 ---@type ChadrcConfig
 local M = {}
 
+local highlight = require("custom.highlight")
+
 M.plugins = "custom.plugins"
 
 M.ui = {
   theme = "catppuccin",
   transparency = true,
   lsp_semantic_tokens = false,
+
+  hl_override = highlight.override,
+  hl_add = highlight.add,
 
   cmp = {
     selected_item_bg = "simple",

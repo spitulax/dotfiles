@@ -9,9 +9,6 @@ M.gitsigns = {
     changedelete = { text = "~" },
     untracked = { text = "│" },
   },
-  yadm = {
-    enable = true,
-  },
 }
 
 return M

@@ -2,6 +2,9 @@ local M = {
   {
     "catppuccin/nvim",
     name = "catppuccin",
+    opts = {
+      flavour = "mocha",
+    },
     priority = 1000,
   },
 
@@ -25,6 +28,9 @@ local M = {
   {
     "mg979/vim-visual-multi",
     branch = "master",
+    config = function()
+      require("custom.configs.vim-visual-multi")
+    end,
     lazy = false,
   },
 

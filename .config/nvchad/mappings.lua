@@ -1,3 +1,4 @@
+---@type MappingsTable
 local M = {}
 
 local function cmd_prompt(prompt, completion, cmd)
@@ -26,8 +27,11 @@ M.general = {
       end,
       "Open file" },
     ["<C-q>"] = { "<cmd>qa<cr>", "Close Neovim" },
-    ["<M-q>"] = { "<cmd>q!<cr>", "Close current buffer without saving" },
     ["<C-c>"] = { "<C-w>q", "Close current window" },
+    ["<M-c>"] = { "<C-w>o", "Close all other windows" },
+    ["<M-t>"] = { "<cmd>tabnew<cr>", "Create new tab" },
+    ["<M-q>"] = { "<cmd>tabclose<cr>", "Close current tab" },
+    ["<M-a>"] = { "<cmd>tabonly<cr>", "Close all other tabs" },
     ["<leader>x"] = {
       function()
         require("nvchad.tabufline").close_buffer()
@@ -43,7 +47,7 @@ M.general = {
       end,
       "Jump to buffer by name",
     },
-  }
+  },
 }
 
 M.nvimtree = {
@@ -83,10 +87,6 @@ M.telescope = {
     -- find
     ["<leader>fe"] = {
       function()
-        -- vim.ui.input({prompt = "Find in: ", completion = "file"}, function(input)
-        --   if input ~= nil then vim.cmd("Telescope find_files cwd=" .. input)
-        --   else return end
-        -- end)
         cmd_prompt("Find files in", "file", "Telescope find_files cwd=")
       end,
       "Find files in specified directory",
