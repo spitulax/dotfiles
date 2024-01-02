@@ -70,6 +70,13 @@ local M = {
       return vim.tbl_deep_extend("force", require("plugins.configs.cmp"), require("custom.configs.cmp"))
     end
   },
+
+  {
+    'nvim-telescope/telescope.nvim', branch = '0.1.x',
+    opts = function()
+      return vim.tbl_deep_extend("force", require("plugins.configs.telescope"), require("custom.configs.telescope"))
+    end,
+  },
 }
 
 return M

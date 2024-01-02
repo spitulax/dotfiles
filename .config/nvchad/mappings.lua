@@ -1,11 +1,17 @@
 ---@type MappingsTable
 local M = {}
 
-local function cmd_prompt(prompt, completion, cmd)
+local function prompt_callback(prompt, completion, callback)
   vim.ui.input({prompt = prompt .. ": ", completion = completion}, function(input)
-    if input ~= nil then vim.cmd(cmd .. input)
+    if input ~= nil then callback(input)
     else return
     end
+  end)
+end
+
+local function prompt_cmd(prompt, completion, cmd)
+  prompt_callback(prompt, completion, function(input)
+    vim.cmd(cmd .. input)
   end)
 end
 
@@ -31,9 +37,16 @@ M.general = {
     ["!"] = { ":!", "Enter shell command mode", opts = { nowait = true } },
     ["<leader>o"] = {
       function()
-        cmd_prompt("Open file", "file", "e ")
+        prompt_cmd("Open file", "file", "e ")
       end,
       "Open file" },
+    ["<leader>c"] = {
+      function()
+        prompt_callback("Change to", "file", function(input)
+          vim.cmd("e " .. input .. " | bd #")
+        end)
+      end,
+      "Change buffer" },
     ["<C-q>"] = { "<cmd>qa<cr>", "Close Neovim" },
     ["<C-c>"] = { "<C-w>q", "Close current window" },
     ["<M-c>"] = { "<C-w>o", "Close all other windows" },
@@ -47,14 +60,14 @@ M.general = {
     ["<M-a>"] = { "<cmd>tabonly<cr>", "Close all other tabs" },
     ["<leader>x"] = {
       function()
-        require("nvchad.tabufline").close_buffer()
+        vim.cmd("bp | bd #")
       end,
       "Close current buffer" },
     ["<M-.>"] = { "<cmd>bn<cr>", "Goto next buffer" },
     ["<M-,>"] = { "<cmd>bp<cr>", "Goto prev buffer" },
     ["<M-b>"] = {
       function()
-        cmd_prompt("Jump to buffer", "buffer", "b ")
+        prompt_cmd("Jump to buffer", "buffer", "b ")
       end,
       "Jump to buffer by name",
     },
@@ -101,7 +114,7 @@ M.telescope = {
     -- find
     ["<leader>fe"] = {
       function()
-        cmd_prompt("Find files in", "file", "Telescope find_files cwd=")
+        prompt_cmd("Find files in", "file", "Telescope find_files cwd=")
       end,
       "Find files in specified directory",
     },

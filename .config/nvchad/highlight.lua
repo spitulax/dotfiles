@@ -14,6 +14,7 @@ M.override = {
   St_Mode = { bg = "NONE" },
 
   -- Syntax highlighting
+  Special = { fg = "nord_blue" },
   Comment = { italic = true },
   Boolean = { bold = true },
   Keyword = { bold = true },
