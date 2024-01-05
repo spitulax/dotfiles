@@ -84,6 +84,13 @@ local M = {
   },
 
   {
+    "AckslD/nvim-neoclip.lua",
+    opts = function()
+      return require("custom.configs.others").neoclip
+    end
+  },
+
+  {
     'echasnovski/mini.nvim', version = false,
     event = "BufWinEnter",
     init = function(_)

@@ -11,4 +11,15 @@ M.gitsigns = {
   },
 }
 
+M.neoclip = {
+  default_register = { '"', '+', '*' },
+  keys = {
+    telescope = {
+      i = {
+        paste = '<c-v>',
+      },
+    },
+  },
+}
+
 return M

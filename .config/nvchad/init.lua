@@ -16,3 +16,4 @@ opt.number = true
 opt.relativenumber = true
 opt.cursorline = true
 opt.clipboard = "unnamed"
+opt.complete = ""

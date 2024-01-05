@@ -150,6 +150,7 @@ M.telescope = {
     ["<leader>gs"] = { "<cmd> Telescope git_status <CR>", "Git status" },
     -- extensions
     ["<leader>fxm"] = { "<cmd> Telescope media_files <CR>", "Preview media" },
+    ["<leader>fp"] = { "<cmd> Telescope neoclip <CR>", "Preview clipboard" },
   },
 }
 
