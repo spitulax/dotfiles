@@ -1,4 +1,6 @@
 local M = {
+  "nvim-lua/popup.nvim",
+
   {
     "catppuccin/nvim",
     name = "catppuccin",
@@ -73,8 +75,21 @@ local M = {
 
   {
     'nvim-telescope/telescope.nvim', branch = '0.1.x',
+    dependencies = {
+      'nvim-telescope/telescope-media-files.nvim',
+    },
     opts = function()
       return vim.tbl_deep_extend("force", require("plugins.configs.telescope"), require("custom.configs.telescope"))
+    end,
+  },
+
+  {
+    'echasnovski/mini.nvim', version = false,
+    event = "BufWinEnter",
+    init = function(_)
+      require('mini.align').setup()
+      require('mini.bufremove').setup()
+      require('mini.surround').setup()
     end,
   },
 }

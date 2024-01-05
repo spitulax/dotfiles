@@ -1,7 +1,7 @@
 local cmp = require("cmp")
 
 local opts = {
-  preselect = cmp.PreselectMode.None,
+  preselect = cmp.PreselectMode.Item,
   completion = {
     keyword_length = 3,
   },
@@ -12,16 +12,23 @@ local opts = {
   },
   mapping = {
     ["<M-x>"] = cmp.mapping.close(),
+    ["<C-Space>"] = function()
+      if cmp.visible() then cmp.close()
+      else cmp.complete() end
+    end,
     ["<M-z>"] = cmp.mapping.abort(),
     ["<M-d>"] = function()
       if cmp.visible_docs() then cmp.close_docs()
       else cmp.open_docs() end
     end,
-    ["<CR>"] = vim.NIL,
     ["<Tab>"] = cmp.mapping.confirm({
       behavior = cmp.ConfirmBehavior.Insert,
       select = true,
     }),
+
+    -- disabled
+    ["<CR>"] = vim.NIL,
+    ["<C-e>"] = vim.NIL,
   },
   sources = {
     { name = "nvim_lsp" },
