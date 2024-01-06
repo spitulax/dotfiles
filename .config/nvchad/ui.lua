@@ -91,24 +91,18 @@ M.statusline = {
   theme = "vscode",
   separator_style = "block",
   overriden_modules = function(modules)
-    local shift = 0
-
     -- Mode
-    modules[1+shift] = statusline_modules.mode()
+    modules[1] = statusline_modules.mode()
+    -- Cursor Position
+    modules[9] = statusline_modules.cursor_position()
+    -- Filetype
+    modules[11] = statusline_modules.filetype()
+    -- LSP Status
+    modules[12] = statusline_modules.lsp_status()
     -- Modified
     if vim.bo[stbufnr()].modified then
-      -- modules[#modules+1] = nil
       table.insert(modules, 3, statusline_modules.modified())
-      shift = 1
-    else
-      shift = 0
     end
-    -- Cursor Position
-    modules[9+shift] = statusline_modules.cursor_position()
-    -- Filetype
-    modules[11+shift] = statusline_modules.filetype()
-    -- LSP Status
-    modules[12+shift] = statusline_modules.lsp_status()
   end
 }
 

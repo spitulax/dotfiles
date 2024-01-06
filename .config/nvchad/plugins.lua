@@ -60,7 +60,7 @@ local M = {
     "williamboman/mason.nvim",
     opts = function()
       return require("custom.configs.mason")
-    end
+    end,
   },
 
   {
@@ -98,10 +98,12 @@ local M = {
     'echasnovski/mini.nvim', version = false,
     init = function(_)
       lazy_load("mini.nvim")
+    end,
+    config = function(_, _)
       require('mini.align').setup()
       require('mini.bufremove').setup()
       require('mini.surround').setup()
-    end,
+    end
   },
 }
 

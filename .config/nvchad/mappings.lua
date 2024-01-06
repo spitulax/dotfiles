@@ -96,6 +96,7 @@ M.general = {
     -- shortcuts
     ["!"] = { ":!", "Enter shell command mode", opts = { nowait = true } },
     ["<C-n>"] = { ":norm ", "Execute normal mode commands", opts = { nowait = true } },
+    ["<C-p>"] = { "\"+p", "Paste from + register (p)" },
     ["<C-y>"] = { "\"+y", "Yank to + register" },
   },
 }
@@ -150,7 +151,7 @@ M.telescope = {
     ["<leader>gs"] = { "<cmd> Telescope git_status <CR>", "Git status" },
     -- extensions
     ["<leader>fxm"] = { "<cmd> Telescope media_files <CR>", "Preview media" },
-    ["<leader>fp"] = { "<cmd> Telescope neoclip <CR>", "Preview clipboard" },
+    ["<leader>fl"] = { "<cmd> Telescope neoclip <CR>", "Preview clipboard" },
   },
 }
 

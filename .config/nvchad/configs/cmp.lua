@@ -1,7 +1,7 @@
 local cmp = require("cmp")
 
 local opts = {
-  preselect = cmp.PreselectMode.Item,
+  preselect = cmp.PreselectMode.None,
   completion = {
     keyword_length = 3,
   },
@@ -31,7 +31,7 @@ local opts = {
     ["<C-e>"] = vim.NIL,
   },
   sources = {
-    { name = "nvim_lsp" },
+    -- { name = "nvim_lsp" },
     { name = "luasnip" },
     { name = "buffer" },
     { name = "nvim_lua" },
