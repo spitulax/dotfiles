@@ -6,6 +6,7 @@ local M = {
   {
     "catppuccin/nvim",
     name = "catppuccin",
+    lazy = false,
     opts = {
       flavour = "mocha",
     },

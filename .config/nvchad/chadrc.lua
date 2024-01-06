@@ -17,10 +17,7 @@ M.ui = {
     selected_item_bg = "simple",
   },
 
-  statusline = {
-    theme = "vscode",
-    separator_style = "block",
-  },
+  statusline = require("custom.ui").statusline,
 
   tabufline = {
     enabled = false,
@@ -31,17 +28,10 @@ M.ui = {
   },
 
   nvdash = {
-    load_on_startup = true,
+    load_on_startup = false,
 
     header = {
       "        Neovim v" .. (vim.version().major) .. "." .. (vim.version().minor) .. "." .. (vim.version().patch) .. "        ",
-    },
-
-    buttons = {
-      { "  Find File", "Spc f f", "Telescope find_files" },
-      { "󰈚  Recent Files", "Spc f o", "Telescope oldfiles" },
-      { "󰈭  Find Word", "Spc f w", "Telescope live_grep" },
-      { "  Bookmarks", "Spc m a", "Telescope marks" },
     },
   },
 }
