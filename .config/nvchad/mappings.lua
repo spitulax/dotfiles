@@ -3,13 +3,13 @@ local M = {}
 
 local function prompt_callback(prompt, completion, callback)
   vim.ui.input({prompt = prompt .. ": ", completion = completion}, function(input)
-    if input ~= nil and string.gsub(input, " ", "") ~= "" then callback(input) end
+    if input and string.gsub(input, " ", "") ~= "" then callback(input) end
   end)
 end
 
 local function prompt_cmd(prompt, completion, cmd)
   prompt_callback(prompt, completion, function(input)
-    if input ~= nil and string.gsub(input, " ", "") ~= "" then vim.cmd(cmd .. input) end
+    if input and string.gsub(input, " ", "") ~= "" then vim.cmd(cmd .. input) end
   end)
 end
 

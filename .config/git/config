@@ -1,14 +1,19 @@
-[user]
-	name = "Bintang"
-	email = "bintangadiputrapratama@gmail.com"
 [core]
-	editor = "nvim"
+  eol = lf
+  editor = nvim
+[diff]
+  tool = "difftool-nvim"
+[difftool "difftool-nvim"]
+  cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+  prompt = false
 [init]
-	defaultBranch = "main"
+  defaultBranch = "main"
+[user]
+  name = "Bintang"
+  email = "bintangadiputrapratama@gmail.com"
+
 [credential]
   credentialStore = "gpg"
-	helper = /home/bintang/thirdparty/gcm-linux_amd64.2.4.1/git-credential-manager
+  helper = /home/bintang/thirdparty/gcm-linux_amd64.2.4.1/git-credential-manager
 [credential "https://dev.azure.com"]
-	useHttpPath = true
-[diff]
-	tool = nvimdiff
+  useHttpPath = true

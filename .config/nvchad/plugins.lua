@@ -1,3 +1,5 @@
+local lazy_load = require("core.utils").lazy_load
+
 local M = {
   "nvim-lua/popup.nvim",
 
@@ -31,10 +33,12 @@ local M = {
     "mg979/vim-visual-multi",
     branch = "master",
     enabled = false,
+    init = function()
+      lazy_load("vim-visual-multi")
+    end,
     config = function()
       require("custom.configs.vim-visual-multi")
     end,
-    lazy = false,
   },
 
   {
@@ -77,6 +81,12 @@ local M = {
     'nvim-telescope/telescope.nvim', branch = '0.1.x',
     dependencies = {
       'nvim-telescope/telescope-media-files.nvim',
+      {
+        "AckslD/nvim-neoclip.lua",
+        opts = function()
+          return require("custom.configs.others").neoclip
+        end
+      },
     },
     opts = function()
       return vim.tbl_deep_extend("force", require("plugins.configs.telescope"), require("custom.configs.telescope"))
@@ -84,16 +94,9 @@ local M = {
   },
 
   {
-    "AckslD/nvim-neoclip.lua",
-    opts = function()
-      return require("custom.configs.others").neoclip
-    end
-  },
-
-  {
     'echasnovski/mini.nvim', version = false,
-    event = "BufWinEnter",
     init = function(_)
+      lazy_load("mini.nvim")
       require('mini.align').setup()
       require('mini.bufremove').setup()
       require('mini.surround').setup()
