@@ -22,4 +22,8 @@ M.neoclip = {
   },
 }
 
+M.blankline = {
+  context_char = '┃',
+}
+
 return M

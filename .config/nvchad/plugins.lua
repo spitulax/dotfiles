@@ -105,6 +105,20 @@ local M = {
       require('mini.surround').setup()
     end
   },
+
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    opts = function()
+      return vim.tbl_deep_extend("force", require("plugins.configs.others").blankline, require("custom.configs.others").blankline)
+    end
+  },
+
+  {
+    "folke/which-key.nvim",
+    opts = function()
+      return require("custom.configs.which-key")
+    end,
+  },
 }
 
 return M

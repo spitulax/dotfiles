@@ -17,3 +17,4 @@ opt.relativenumber = true
 opt.cursorline = true
 opt.clipboard = "unnamed"
 opt.complete = ""
+opt.timeoutlen = 500
