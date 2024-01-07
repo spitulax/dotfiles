@@ -8,6 +8,8 @@ local opts = {
     "cmake",
     "rust",
     "markdown",
+    "kotlin",
+    "java",
   },
 }
 
