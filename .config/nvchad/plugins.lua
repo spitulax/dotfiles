@@ -79,6 +79,15 @@ local M = {
   },
 
   {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    lazy = false,
+    config = function(_, _)
+      require("harpoon").setup({})
+    end,
+  },
+
+  {
     'nvim-telescope/telescope.nvim', branch = '0.1.x',
     dependencies = {
       'nvim-telescope/telescope-media-files.nvim',
