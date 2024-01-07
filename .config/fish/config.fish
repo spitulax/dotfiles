@@ -65,7 +65,7 @@ alias ls="eza -G -laH --no-user --color=always --group-directories-first --icons
 alias lr="eza -G --no-user --color=always --group-directories-first --icons";
 alias la="eza -G -a --no-user --color=always --group-directories-first --icons";
 alias ll="eza -G -lH --no-user --color=always --group-directories-first --icons";
-alias lt="eza -G -Ta --no-user --color=always --group-directories-first --icons --long -L";
+alias lt="eza -G -T --no-user --color=always --group-directories-first --icons --long -L";
 # shortcuts
 alias vim="nvim";
 alias ".."="cd ..";
