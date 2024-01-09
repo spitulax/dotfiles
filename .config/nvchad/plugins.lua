@@ -128,6 +128,20 @@ local M = {
       return require("custom.configs.which-key")
     end,
   },
+
+  {
+    'sindrets/diffview.nvim',
+    config = true,
+    cmd = { "DiffviewOpen", "DiffviewFileHistory" },
+  },
+
+  {
+    "NeogitOrg/neogit",
+    opts = function()
+      return require("custom.configs.neogit")
+    end,
+    cmd = "Neogit",
+  },
 }
 
 return M

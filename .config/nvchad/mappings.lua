@@ -167,4 +167,10 @@ M.telescope = {
   },
 }
 
+M.neogit = {
+  n = {
+    ["<leader>g"] = { "<cmd>Neogit<cr>", "Open Neogit" },
+  },
+}
+
 return M
