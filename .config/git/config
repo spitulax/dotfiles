@@ -14,6 +14,9 @@
 
 [credential]
   credentialStore = "gpg"
-  helper = /home/bintang/thirdparty/gcm-linux_amd64.2.4.1/git-credential-manager
-[credential "https://dev.azure.com"]
-  useHttpPath = true
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
