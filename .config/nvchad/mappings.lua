@@ -7,12 +7,6 @@ local function prompt_callback(prompt, completion, callback)
   end)
 end
 
-local function prompt_cmd(prompt, completion, cmd)
-  prompt_callback(prompt, completion, function(input)
-    if input and string.gsub(input, " ", "") ~= "" then vim.cmd(cmd .. input) end
-  end)
-end
-
 M.disabled = {
   i = {
     ["<C-e>"] = "",
@@ -50,11 +44,6 @@ M.general = {
     ["<C-q>"] = { "<cmd>qa<cr>", "Close Neovim" },
     ["<M-.>"] = { "<cmd>bn<cr>", "Goto next buffer" },
     ["<M-,>"] = { "<cmd>bp<cr>", "Goto prev buffer" },
-    ["<leader>o"] = {
-      function()
-        prompt_cmd("Open file", "file", "e ")
-      end,
-      "Open file" },
     ["<leader>O"] = {
       function()
         prompt_callback("Change to", "file", function(input)
@@ -67,12 +56,6 @@ M.general = {
       "Change buffer" },
     ["<leader>x"] = { "<cmd>lua MiniBufremove.delete(0)<cr>", "Close current buffer", opts = { silent = true } },
     ["<leader>X"] = { "<cmd>lua MiniBufremove.delete(vim.fn.bufnr('#'))<cr>", "Close previous buffer", opts = { silent = true } },
-    ["<M-b>"] = {
-      function()
-        prompt_cmd("Jump to buffer", "buffer", "b ")
-      end,
-      "Jump to buffer by name",
-    },
     ["<leader>S"] = {
       function()
         local buf = vim.api.nvim_create_buf(true, true)
@@ -140,20 +123,24 @@ M.telescope = {
     -- find
     ["<leader>fe"] = {
       function()
-        prompt_cmd("Find files in", "file", "Telescope find_files cwd=")
+        prompt_callback("Find files in", "file", function(input)
+          vim.cmd("Telescope find_files cwd=" .. input)
+        end)
       end,
       "Find files in specified directory",
     },
-    ["<leader>fk"] = { "<cmd> Telescope keymaps <CR>", "Find assigned keybindings" },
-    ["<leader>ft"] = { "<cmd> Telescope builtin <CR>", "Find Telescope builtin commands"},
-    ["<leader>fc"] = { "<cmd> Telescope highlights <CR>", "List highlight groups"},
+    ["<leader>o"]   = { "<cmd> Telescope find_files <CR>", "Find files in cwd" },
+    ["<M-b>"]       = { "<cmd> Telescope buffers <CR>", "Find opened buffers" },
+    ["<leader>fk"]  = { "<cmd> Telescope keymaps <CR>", "Find assigned keybindings" },
+    ["<leader>ft"]  = { "<cmd> Telescope builtin <CR>", "Find Telescope builtin commands"},
+    ["<leader>fc"]  = { "<cmd> Telescope highlights <CR>", "List highlight groups"},
     -- git
-    ["<leader>gc"] = { "<cmd> Telescope git_commits <CR>", "Git commits" },
-    ["<leader>gb"] = { "<cmd> Telescope git_branches <CR>", "Git branches" },
-    ["<leader>gs"] = { "<cmd> Telescope git_status <CR>", "Git status" },
+    ["<leader>gc"]  = { "<cmd> Telescope git_commits <CR>", "Git commits" },
+    ["<leader>gb"]  = { "<cmd> Telescope git_branches <CR>", "Git branches" },
+    ["<leader>gs"]  = { "<cmd> Telescope git_status <CR>", "Git status" },
     -- extensions
     ["<leader>fxm"] = { "<cmd> Telescope media_files <CR>", "Preview media" },
-    ["<leader>fl"] = { "<cmd> Telescope neoclip <CR>", "Preview clipboard" },
+    ["<leader>fl"]  = { "<cmd> Telescope neoclip <CR>", "Preview clipboard" },
     -- harpoon
     ["<leader>h"] = {
       function()
@@ -170,6 +157,15 @@ M.telescope = {
 M.neogit = {
   n = {
     ["<leader>g"] = { "<cmd>Neogit<cr>", "Open Neogit" },
+  },
+}
+
+M.icon_picker = {
+  n = {
+    ["<leader>i"] = { "<cmd>IconPickerYank<cr>", "Open icon picker" },
+  },
+  i = {
+    ["<C-a>"] = { "<cmd>IconPickerInsert<cr>", "Insert an icon" },
   },
 }
 

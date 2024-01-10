@@ -142,6 +142,26 @@ local M = {
     end,
     cmd = "Neogit",
   },
+
+  {
+    'stevearc/dressing.nvim',
+    init = function()
+      lazy_load("dressing.nvim")
+    end,
+    opts = function()
+      return require("custom.configs.dressing")
+    end,
+  },
+
+  {
+    "ziontee113/icon-picker.nvim",
+    init = function()
+      lazy_load("icon-picker.nvim")
+    end,
+    config = function()
+      require("icon-picker").setup({ disable_legacy_commands = true })
+    end
+  },
 }
 
 return M
