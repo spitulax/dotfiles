@@ -24,7 +24,7 @@ M.override = {
 M.add = {
   -- Nvim
   TabLine = { underline = false, bg = "NONE", fg = "light_grey" },
-  TabLineSel = { bold = true, bg = "NONE", fg = "white" },
+  TabLineSel = { bold = true, bg = "NONE", fg = "blue" },
   TabLineFill = { bg = "NONE" },
 
   -- Statusline
