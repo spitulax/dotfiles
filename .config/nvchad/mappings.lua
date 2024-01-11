@@ -13,7 +13,12 @@ M.disabled = {
   },
 
   n = {
+    ["<leader>v"] = "",
+    ["<leader>h"] = "",
     ["<leader>n"] = "",
+    ["<A-i>"] = "",
+    ["<A-h>"] = "",
+    ["<A-v>"] = "",
     ["<leader>pt"] = "",
     ["<leader>th"] = "",
     ["<leader>rn"] = "",
@@ -41,7 +46,7 @@ M.general = {
     ["<C-p>"] = { "\"+p", "Paste from + register (p)" },
     ["<M-p>"] = { "\"+P", "Paste from + register (P)" },
     ["<C-y>"] = { "\"+y", "Yank to + register" },
-    ["<C-q>"] = { "<cmd>qa<cr>", "Close Neovim" },
+    ["<leader>Q"] = { "<cmd>qa<cr>", "Close Neovim" },
     ["<M-.>"] = { "<cmd>bn<cr>", "Goto next buffer" },
     ["<M-,>"] = { "<cmd>bp<cr>", "Goto prev buffer" },
     ["<leader>O"] = {
@@ -65,6 +70,8 @@ M.general = {
     },
 
     -- window and tab management
+    ["<M-w>"] = { "<C-w>|", "Max out window width" },
+    ["<M-h>"] = { "<C-w>_", "Max out window height" },
     ["<C-c>"] = { "<C-w>q", "Close current window" },
     ["<M-c>"] = { "<C-w>o", "Close all other windows" },
     ["<M-=>"] = { "<C-w>+", "Increase window height" },
@@ -166,6 +173,30 @@ M.icon_picker = {
   },
   i = {
     ["<C-a>"] = { "<cmd>IconPickerInsert<cr>", "Insert an icon" },
+  },
+}
+
+M.nvterm = {
+  n = {
+    ["<leader>T"] = {
+      function()
+        require("nvterm.terminal").toggle "float"
+      end,
+      "Toggle floating term",
+    },
+    ["<leader>TH"] = {
+      function()
+        require("nvterm.terminal").toggle "horizontal"
+      end,
+      "Toggle horizontal term",
+    },
+
+    ["<leader>TV"] = {
+      function()
+        require("nvterm.terminal").toggle "vertical"
+      end,
+      "Toggle vertical term",
+    },
   },
 }
 
