@@ -162,6 +162,19 @@ local M = {
       require("icon-picker").setup({ disable_legacy_commands = true })
     end
   },
+
+  {
+    "smjonas/live-command.nvim",
+    init = function()
+      lazy_load("live-command.nvim")
+    end,
+    opts = function()
+      return require("custom.configs.live-command")
+    end,
+    config = function(_, opts)
+      require("live-command").setup(opts)
+    end,
+  },
 }
 
 return M
