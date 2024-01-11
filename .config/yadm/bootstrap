@@ -2,14 +2,14 @@
 
 cd "$HOME"
 
-echo "Initializing submodules"
+# Initializing submodules
 yadm submodule init
 
-echo "Linking NvChad config"
+# Linking NvChad config
 ln -s .config/nvchad .config/nvim/lua/custom
 
-echo "Installing fish plugins"
+# Installing fish plugins
 curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher && fisher update
 
-echo "Changing the default shell"
+# Changing the default shell
 chsh -s /usr/bin/fish
