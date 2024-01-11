@@ -1,0 +1,17 @@
+# vim: set ft=sh:
+
+export PATH=$HOME/.cargo/bin:$HOME/.local/bin:$PATH
+export EDITOR=nvim
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_DATA_HOME=$HOME/.local/share
+export REPOS=$HOME/repos
+export NOTES=$HOME/notes
+export THIRDPARTY=$HOME/thirdparty
+export TEMPDIR=$HOME/.temp
+export GPG_TTY=$(tty)
+# WSL
+if [[ -v 'WSLENV' ]]; then
+  export C=/mnt/c
+  export WINHOME=/mnt/c/Users/$(whoami)
+fi

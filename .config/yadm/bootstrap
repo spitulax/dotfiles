@@ -3,7 +3,13 @@
 cd "$HOME"
 
 echo "Initializing submodules"
-yadm submodule update --recursive --init
+yadm submodule init
 
 echo "Linking NvChad config"
 ln -s .config/nvchad .config/nvim/lua/custom
+
+echo "Installing fish plugins"
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher && fisher update
+
+echo "Changing the default shell"
+chsh -s /usr/bin/fish

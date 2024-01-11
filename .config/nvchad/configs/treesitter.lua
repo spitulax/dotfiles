@@ -10,6 +10,8 @@ local opts = {
     "markdown",
     "kotlin",
     "java",
+    "bash",
+    "fish",
   },
 }
 
