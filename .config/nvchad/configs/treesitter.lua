@@ -12,6 +12,7 @@ local opts = {
     "java",
     "bash",
     "fish",
+    "nix",
   },
 }
 

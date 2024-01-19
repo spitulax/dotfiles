@@ -1,4 +1,15 @@
 /*
 !/.gitignore
-!/.config
-/.config/gh/hosts.yml
+!/.gitmodules
+!/README.md
+!/LICENSE
+!/.config/fish
+!/.config/gh/config.yml
+!/.config/git/config
+!/.config/neofetch
+!/.config/nvchad
+!/.config/nvim
+!/.config/yadm
+!/.config/aliasrc
+!/.config/envrc
+!/.config/starship.toml
