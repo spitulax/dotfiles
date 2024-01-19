@@ -9,7 +9,7 @@ yadm submodule init
 ln -s .config/nvchad .config/nvim/lua/custom
 
 # Installing fish plugins
-curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher && fisher update
+(curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source) && fisher install jorgebucaran/fisher && fisher update
 
 # Changing the default shell
 chsh -s /usr/bin/fish
