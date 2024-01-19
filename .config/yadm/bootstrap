@@ -3,11 +3,10 @@
 cd "$HOME"
 
 # Initializing submodules
-yadm submodule init
+yadm submodule update --init
 
 # Linking NvChad config
-mkdir -p .config/nvim/lua/
-ln -sf .config/nvchad .config/nvim/lua/custom
+ln -sf $HOME/.config/nvchad $HOME/.config/nvim/lua/custom
 
 # Installing fish plugins
 fish -c 'curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher && fisher update'

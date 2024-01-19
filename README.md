@@ -6,5 +6,5 @@ I use [yadm](https://github.com/TheLocehiliosan/yadm) to manage my dotfiles.
 
 You need to [install yadm](https://yadm.io/docs/install) first, and run `yadm clone` to install the dotfiles into your system.
 ```sh
-$ yadm clone --bootstrap https://github.com/spitulax/dotfiles
+$ yadm clone --recursive --bootstrap https://github.com/spitulax/dotfiles
 ```
