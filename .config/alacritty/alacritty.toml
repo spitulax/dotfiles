@@ -1,0 +1,17 @@
+import = [
+  "~/.config/alacritty/themes/catppuccin_mocha.toml"
+]
+
+[window]
+decorations = "None"
+opacity = 0.84
+startup_mode = "Maximized"
+
+[font]
+size = 16
+
+[cursor]
+style = { shape = "Block", blinking = "On" }
+
+[mouse]
+hide_when_typing = true
