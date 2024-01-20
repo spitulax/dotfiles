@@ -3,11 +3,7 @@ local on_attach = configs.on_attach
 local capabilities = configs.capabilities
 
 local lspconfig = require("lspconfig")
-local servers = {
-  "rust_analyzer",
-  "clangd",
-  "asm_lsp",
-}
+local servers = {}
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {

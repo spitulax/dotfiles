@@ -75,6 +75,7 @@ local M = {
 
   {
     "williamboman/mason.nvim",
+    enabled = false,
     opts = function()
       return require("custom.configs.mason")
     end,
