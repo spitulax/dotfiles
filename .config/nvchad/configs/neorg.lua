@@ -5,7 +5,7 @@ local opts = {
     ["core.dirman"] = {
       config = {
         workspaces = {
-          notes = "~/notes",
+          notes = "~/Notes",
         },
       },
     },
