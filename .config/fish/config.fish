@@ -55,6 +55,12 @@ if status is-interactive
   # Remove fish intro message
   set fish_greeting
 
+  # Cursor appearance indicates mode 
+  set fish_cursor_default     block      blink
+  set fish_cursor_insert      line       blink
+  set fish_cursor_replace_one underscore blink
+  set fish_cursor_visual      block
+
   # Starship
   starship init fish | source
 end
