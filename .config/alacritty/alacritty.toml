@@ -3,7 +3,6 @@ import = [
 ]
 
 [window]
-decorations = "None"
 opacity = 0.84
 startup_mode = "Maximized"
 
