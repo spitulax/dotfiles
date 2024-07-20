@@ -1,10 +1,16 @@
-My Personal Dotfiles
-==
-Installation
---
+# My Personal Dotfiles
+
+My personal sin.
+
+Go to <https://github.com/spitulax/nixos-config> for my current dotfiles.
+
+## Installation
+
 I use [yadm](https://github.com/TheLocehiliosan/yadm) to manage my dotfiles.
 
-You need to [install yadm](https://yadm.io/docs/install) first, and run `yadm clone` to install the dotfiles into your system.
+You need to [install yadm](https://yadm.io/docs/install) first, and run `yadm clone` to install the
+dotfiles into your system.
+
 ```sh
 $ yadm clone --recursive --bootstrap https://github.com/spitulax/dotfiles
 ```
